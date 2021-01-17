@@ -1,2 +1,12 @@
-@import './breakpoints.scss';
-@import './variables.scss';
+@import "mixins/breakpoints";
+
+@import "core/fonts";
+@import "core/variables";
+@import "core/globals";
+
+@import "components/loader";
+@import "components/form";
+@import "components/nav";
+
+@import "pages/home";
+@import "pages/nominees";

@@ -1,0 +1,162 @@
+.c-page {
+  margin-top: 20px;
+  position: relative;
+
+  .c-banner {
+    position: absolute;
+    left: 50%;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    transform: translateX(-50%) translateY(-100vh);
+    color: $col-white;
+    padding: 20px 10px;
+    background: $col-black;
+    border-radius: 4px;
+    transition: transform 0.5s;
+
+    &.active {
+      transform: translateX(-50%) translateY(-110px);
+
+      @include media("<=phone") {
+        padding: 10px;
+        font-size: 14px;
+        transform: translateX(-50%) translateY(-52px);
+      }
+    }
+  }
+
+  .c-empty {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    &__content {
+      @include media("<=phone") {
+        font-size: 14px;
+      }
+
+      a {
+        display: inline-block;
+
+        button {
+          background: $col-black;
+          font-weight: 500;
+          padding: 15px 20px;
+          color: $col-white;
+        }
+      }
+    }
+  }
+
+  .c-grid {
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+
+    &:empty {
+      height: 40vh;
+      position: relative;
+
+      &::after {
+        position: absolute;
+        content: "Search returned no results, please enter a different keyword";
+        top: 50%;
+        font-size: 24px;
+        text-align: center;
+        transform: translateY(-50%);
+        width: 100%;
+
+        @include media("<=phone") {
+          font-size: 14px;
+        }
+      }
+    }
+
+    &--autofit {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .c-box {
+      animation: enterBox 0.5s;
+      &:hover {
+        img {
+          transform: scale(1.05);
+        }
+      }
+
+      @keyframes enterBox {
+        from {
+          transform: translateY(20px);
+        }
+      }
+
+      .title {
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+
+      &.nominated {
+        border: 2px solid $col-green;
+        button {
+          background: $col-green;
+        }
+      }
+
+      @include media("<=426px") {
+        max-width: 250px;
+        margin: 0 auto;
+        width: 100%;
+      }
+    }
+
+    .poster {
+      overflow: hidden;
+      height: 230px;
+
+      &-empty {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        text-transform: uppercase;
+        background: rgba($col-gray, 0.3);
+        text-align: center;
+        padding: 0 10px;
+        line-height: 1.2;
+      }
+
+      img {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+        object-position: 50% 20%;
+        transition: transform 0.3s;
+      }
+    }
+
+    button {
+      background: $col-black;
+      text-align: center;
+      width: 100%;
+      color: $col-white;
+      font-family: "Cerebri", sans-serif;
+      padding: 20px 0;
+      transition: background 0.2s;
+    }
+  }
+
+  .c-loading {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__main {
+    padding: 20px 0;
+  }
+}
