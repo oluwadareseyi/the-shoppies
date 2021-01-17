@@ -27,7 +27,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    const url = `http://www.omdbapi.com/?s=${debouncedTitle.trim()}&type=movie&apikey=30035024`;
+    const url = `https://www.omdbapi.com/?s=${debouncedTitle.trim()}&type=movie&apikey=30035024`;
 
     const fetcher = async () => {
       setLoading(true);
