@@ -10,16 +10,6 @@ const pages = [
   { path: "/nominees", pathName: "Nominees", Component: Nominees },
 ];
 
-const searchQuery =
-  "http://www.omdbapi.com/?s=anime&type=movie&apikey=30035024";
-const debounce = (callback, delay) => {
-  let timeout;
-  return function () {
-    clearTimeout(timeout);
-    timeout = setTimeout(callback, delay);
-  };
-};
-
 function App() {
   return (
     <div className="pages container">
