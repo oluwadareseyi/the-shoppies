@@ -35,7 +35,6 @@ const Home = () => {
       setResponse(res.data.Response.toLowerCase());
       setResults(res.data.Search);
       setLoading(false);
-      console.log(res.data);
     };
 
     if (debouncedTitle.trim()) {
