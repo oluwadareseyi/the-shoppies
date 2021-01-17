@@ -51,6 +51,12 @@
     color: $col-gray;
     font-size: 15px;
     margin-bottom: 5px;
+
+    span {
+      &.error {
+        color: red;
+      }
+    }
   }
 }
 

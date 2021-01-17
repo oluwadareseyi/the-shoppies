@@ -17,14 +17,20 @@
     transition: transform 0.5s;
 
     &.active {
-      transform: translateX(-50%) translateY(-110px);
+      transform: translateX(-50%) translateY(-90px);
 
       @include media("<=phone") {
         padding: 10px;
         font-size: 14px;
-        transform: translateX(-50%) translateY(-52px);
+        transform: translateX(-50%) translateY(-42px);
       }
     }
+  }
+
+  .c-results__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .c-empty {
@@ -159,5 +165,44 @@
 
   &__main {
     padding: 20px 0;
+  }
+}
+
+.c-sidebar {
+  position: fixed;
+  height: 100vh;
+  background: $col-white;
+  right: 0;
+  max-width: 500px;
+  width: 100%;
+  z-index: 20;
+  top: 0;
+  transform: translateX(100%);
+  transition: transform 0.3s;
+  padding: 20px;
+  overflow-y: auto;
+
+  .btn-wrapper {
+    text-align: right;
+    button {
+      background: $col-black;
+      color: $col-white;
+      padding: 10px;
+      font-size: 13px;
+    }
+  }
+
+  &.active {
+    transform: translateX(0);
+  }
+}
+.c-backdrop {
+  &.active {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: rgba($col-black, 0.6);
+    z-index: 10;
+    top: 0;
   }
 }

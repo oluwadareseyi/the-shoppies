@@ -11,23 +11,10 @@
   }
 
   .nav-items {
-    font-size: 15px;
-    font-weight: 600;
-    a {
-      color: rgba($col-black, 0.5);
-      transition: 0.3s color;
-
-      &:not(:last-of-type) {
-        margin-right: 30px;
-      }
-
-      &:hover {
-        color: $col-black;
-      }
-
-      &.active {
-        color: $col-black;
-      }
+    button {
+      background: transparent;
+      font-size: 15px;
+      font-weight: 600;
     }
   }
 }
