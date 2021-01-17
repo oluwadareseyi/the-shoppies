@@ -10,7 +10,6 @@ const Home = () => {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState("");
-  const [filterYear, setFilterYear] = useState("");
   const [validYear, setValidYear] = useState(false);
   const [error, setError] = useState(false);
   const [ids, setIds] = useLocalStorage("nomid", []);
